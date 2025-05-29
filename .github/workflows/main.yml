@@ -1,0 +1,9 @@
+name: Check for Secrets
+on: [push]
+jobs:
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Gitleaks
+        uses: zricethezav/gitleaks-action@v1.6.0
