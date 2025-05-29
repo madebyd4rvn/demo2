@@ -1,0 +1,15 @@
+```html
+<script>
+window.onerror = function(message, source, lineno, colno, error) {
+  fetch('http://localhost:4000/alert', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ type: 'frontend-error', message, source })
+  });
+};
+</script>
+```
+
+```html
+<script>nonExistentFunction();</script>
+```
